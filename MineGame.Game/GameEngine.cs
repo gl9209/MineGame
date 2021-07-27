@@ -53,7 +53,7 @@ namespace MineGame.Game
                         return;
                     }
                     var newPosition = CalculateNewPosition(input);
-                    //todo: check name of position
+                    
                     if (!positionChecker.IsLegal(newPosition))
                     {
                         EmitOutput(Output.Invalid);
