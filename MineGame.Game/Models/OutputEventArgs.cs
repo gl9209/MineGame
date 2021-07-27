@@ -11,7 +11,7 @@ namespace MineGame.Game.Models
             Location location = null,
             int? lives = null,
             Dimensions dimensions = null,
-            int? moves=null)
+            int? moves = null)
         {
             Output = outputEnum;
             Location = location;

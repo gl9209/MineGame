@@ -4,7 +4,6 @@ using MineGame.Game.Models;
 
 using static System.Console;
 
-
 namespace MineGame.Hosting
 {
     public class ConsoleHost
@@ -24,7 +23,6 @@ namespace MineGame.Hosting
 
         private void HandleOutput(object sender, OutputEventArgs e)
         {
-            
             Write(consoleTextOutput.Convert(e));
             if (e.Output == Output.Exited)
             {
@@ -39,7 +37,6 @@ namespace MineGame.Hosting
             {
                 gameEngine.ReceiveInput(keyMap.Convert(ReadKey().Key));
             }
-            
         }
     }
 }
