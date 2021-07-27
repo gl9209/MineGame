@@ -7,13 +7,13 @@ namespace MineGame.Game.Models
     public class OutputEventArgs : EventArgs
     {
         internal OutputEventArgs(
-            Output outputEnum,
+            Output output,
             Location location = null,
             int? lives = null,
             Dimensions dimensions = null,
             int? moves = null)
         {
-            Output = outputEnum;
+            Output = output;
             Location = location;
             Lives = lives;
             Dimensions = dimensions;

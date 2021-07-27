@@ -1,6 +1,6 @@
 ﻿using MineGame.Game.Models;
 
-namespace MineGame.Game
+namespace MineGame.Game.Settings
 {
     public class Settings
     {
