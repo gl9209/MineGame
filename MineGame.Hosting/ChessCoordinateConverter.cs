@@ -7,10 +7,11 @@ namespace MineGame.Hosting
     public class ChessCoordinateConverter : ICoordinateConverter
     {
         private const int UpperCaseAUnicode = 65;
+        private const int HighestColumnAllowed = 25;
 
         public string Convert(Location location)
         {
-            if (location.Column > 25)
+            if (location.Column > HighestColumnAllowed)
             {
                 throw new ArgumentException($"{location.Column} does not convert to letter");
             }
