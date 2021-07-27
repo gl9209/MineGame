@@ -129,12 +129,12 @@ namespace MineGame.Game
             switch (output)
             {
                 case Output.Started:
-                    OutputEmmited?.Invoke(this, new OutputEventArgs(output, location, settings.Lives,settings.Dimensions));
+                    OutputEmmited?.Invoke(this, new OutputEventArgs(output, location, settings.Lives, settings.Dimensions));
                     return;
 
                 case Output.Hit:
                 case Output.Miss:
-                    OutputEmmited?.Invoke(this, new OutputEventArgs(output, location));
+                    OutputEmmited?.Invoke(this, new OutputEventArgs(output, location, livesRemaining, moves: moves));
                     return;
 
                 case Output.Exited:

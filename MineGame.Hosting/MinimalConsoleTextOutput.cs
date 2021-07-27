@@ -19,8 +19,8 @@ namespace MineGame.Hosting
             {
                 Output.Started => $"Game started\n{e.Dimensions}\nInitial position: {ConvertCoordinates(e.Location)}\nLives: {e.Lives}\n",
                 Output.Exited => "Game exiting\n",
-                Output.Hit => $"Hit {ConvertCoordinates(e.Location)}\n",
-                Output.Miss => $"Miss {ConvertCoordinates(e.Location)}\n",
+                Output.Hit => $"Hit {ConvertCoordinates(e.Location)} Moves: {e.Moves} Lives: {e.Lives}\n",
+                Output.Miss => $"Miss {ConvertCoordinates(e.Location)} Moves: {e.Moves} Lives: {e.Lives}\n",
                 Output.Won => $"Won\n",
                 Output.Lost => $"Lost\n",
                 Output.Invalid => string.Empty,
