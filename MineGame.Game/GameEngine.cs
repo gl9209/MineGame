@@ -1,5 +1,6 @@
 ﻿using MineGame.Game.Enums;
 using MineGame.Game.Models;
+using MineGame.Game.Settings;
 
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace MineGame.Game
     public class GameEngine
     {
         private readonly Minelayer minelayer;
-        private readonly Settings settings;
+        private readonly GameSettings settings;
         private readonly Random random;
         private int moves;
         private int livesRemaining;
@@ -19,7 +20,7 @@ namespace MineGame.Game
         private IEnumerable<Location> mines;
         private bool gameOver;
 
-        public GameEngine(Random random, Minelayer minelayer, Settings settings)
+        public GameEngine(Random random, Minelayer minelayer, GameSettings settings)
         {
             this.random = random;
             this.minelayer = minelayer;
@@ -50,8 +51,8 @@ namespace MineGame.Game
                         return;
                     }
                     var newPosition = CalculateNewPosition(input);
-
-                    if (!IsLegal(newPosition))
+                    //todo: check name of position
+                    if (!PositionChecker.IsLegal(settings.Dimensions, newPosition))
                     {
                         EmitOutput(Output.Invalid);
                         return;
@@ -87,19 +88,6 @@ namespace MineGame.Game
                 EmitOutput(Output.Won);
                 gameOver = true;
             }
-        }
-
-        private bool IsLegal(Location newPosition)
-        {
-            if (newPosition.Column < 0 || newPosition.Column > settings.Dimensions.Width - 1)
-            {
-                return false;
-            }
-            if (newPosition.Row < 0 || newPosition.Row > settings.Dimensions.Height - 1)
-            {
-                return false;
-            }
-            return true;
         }
 
         private Location CalculateNewPosition(Input input) => input switch

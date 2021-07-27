@@ -1,8 +1,6 @@
-﻿using MineGame.Game.Models;
-
-namespace MineGame.Game.Settings
+﻿namespace MineGame.Game.Settings
 {
-    public class Settings
+    public class GameSettings
     {
         public Dimensions Dimensions { get; set; }
         public MineCountRange MineCountRange { get; set; }

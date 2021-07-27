@@ -1,4 +1,5 @@
 ﻿using MineGame.Game.Models;
+using MineGame.Game.Settings;
 
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,10 @@ namespace MineGame.Game
 {
     public class Minelayer
     {
-        private readonly Settings settings;
+        private readonly GameSettings settings;
         private readonly Random random;
 
-        public Minelayer(Random random, Settings settings)
+        public Minelayer(Random random, GameSettings settings)
         {
             this.settings = settings;
             this.random = random;

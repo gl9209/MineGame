@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
 using MineGame.Game;
-using MineGame.Game.Models;
+using MineGame.Game.Settings;
 using MineGame.Hosting;
 
 using System;
@@ -12,7 +12,7 @@ namespace MineGame.App
     {
         private static void Main()
         {
-            var settings = new Settings
+            var settings = new GameSettings
             {
                 Dimensions = new Dimensions(Width: 8, Height: 8),
                 MineCountRange = new MineCountRange(Minimum: 4, Maximum: 6),
