@@ -15,7 +15,7 @@ namespace MineGame.App
             var settings = new GameSettings
             {
                 Dimensions = new Dimensions(Width: 8, Height: 8),
-                MineCountRange = new MineCountRange(Minimum: 4, Maximum: 6),
+                MineCountRange = new MineCountRange(Minimum: 8, Maximum: 12),
                 Lives = 3
             };
 
