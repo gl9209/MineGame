@@ -12,13 +12,13 @@ namespace MineGame.Game
             this.settings = settings;
         }
 
-        internal bool IsLegal(Location newPosition)
+        public bool IsLegal(Location position)
         {
-            if (newPosition.Column < 0 || newPosition.Column > settings.Dimensions.Width - 1)
+            if (position.Column < 0 || position.Column > settings.Dimensions.Width - 1)
             {
                 return false;
             }
-            if (newPosition.Row < 0 || newPosition.Row > settings.Dimensions.Height - 1)
+            if (position.Row < 0 || position.Row > settings.Dimensions.Height - 1)
             {
                 return false;
             }
