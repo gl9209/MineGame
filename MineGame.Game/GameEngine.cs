@@ -9,9 +9,9 @@ namespace MineGame.Game
 {
     public class GameEngine
     {
-        private Minelayer minelayer;
-        private Settings settings;
-        private Random random;
+        private readonly Minelayer minelayer;
+        private readonly Settings settings;
+        private readonly Random random;
         private int moves;
         private int livesRemaining;
 

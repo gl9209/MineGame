@@ -7,7 +7,7 @@ namespace MineGame.Hosting
 {
     public class MinimalConsoleTextOutput : IConsoleTextOutput
     {
-        private ICoordinateConverter coordinateConverter;
+        private readonly ICoordinateConverter coordinateConverter;
 
         public MinimalConsoleTextOutput(ICoordinateConverter coordinateConverter = null)
         {

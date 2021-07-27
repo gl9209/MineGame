@@ -7,8 +7,8 @@ namespace MineGame.Game
 {
     public class Minelayer
     {
-        private Settings settings;
-        private Random random;
+        private readonly Settings settings;
+        private readonly Random random;
 
         public Minelayer(Random random, Settings settings)
         {

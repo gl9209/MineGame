@@ -8,9 +8,9 @@ namespace MineGame.Hosting
 {
     public class ConsoleHost
     {
-        private GameEngine gameEngine;
-        private IKeyMap keyMap;
-        private IConsoleTextOutput consoleTextOutput;
+        private readonly GameEngine gameEngine;
+        private readonly IKeyMap keyMap;
+        private readonly IConsoleTextOutput consoleTextOutput;
         private bool exit;
 
         public ConsoleHost(GameEngine gameEngine, IKeyMap keyMap, IConsoleTextOutput consoleTextOutput)
