@@ -6,6 +6,12 @@ namespace MineGame.Hosting
 {
     public class StandardKeyMap : IKeyMap
     {
+        public override string ToString()
+        {
+            return "Restart: F5\nExit: F4\nMove: arrow keys\n";
+        }
+        
+
         public Input Convert(ConsoleKey key) =>
             key switch
             {

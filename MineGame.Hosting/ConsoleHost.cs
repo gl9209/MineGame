@@ -32,6 +32,7 @@ namespace MineGame.Hosting
 
         public void Run()
         {
+            WriteLine(keyMap);
             gameEngine.Start();
             while (!exit)
             {
