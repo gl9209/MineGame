@@ -3,15 +3,22 @@ using MineGame.Game.Settings;
 
 namespace MineGame.Game
 {
-    internal class PositionChecker
+    public class PositionChecker
     {
-        internal static bool IsLegal(Dimensions dimensions, Location newPosition)
+        private GameSettings settings;
+
+        public PositionChecker(GameSettings settings)
         {
-            if (newPosition.Column < 0 || newPosition.Column > dimensions.Width - 1)
+            this.settings = settings;
+        }
+
+        internal bool IsLegal(Location newPosition)
+        {
+            if (newPosition.Column < 0 || newPosition.Column > settings.Dimensions.Width - 1)
             {
                 return false;
             }
-            if (newPosition.Row < 0 || newPosition.Row > dimensions.Height - 1)
+            if (newPosition.Row < 0 || newPosition.Row > settings.Dimensions.Height - 1)
             {
                 return false;
             }

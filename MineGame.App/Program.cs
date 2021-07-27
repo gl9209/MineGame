@@ -23,6 +23,7 @@ namespace MineGame.App
                 .AddSingleton(settings)
                 .AddSingleton<Random>()
                 .AddSingleton<Minelayer>()
+                .AddSingleton<PositionChecker>()
                 .AddSingleton<GameEngine>()
                 .AddSingleton<ICoordinateConverter, ChessCoordinateConverter>()
                 .AddSingleton<IConsoleTextOutput, MinimalConsoleTextOutput>()

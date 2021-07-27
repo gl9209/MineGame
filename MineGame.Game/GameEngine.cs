@@ -12,6 +12,7 @@ namespace MineGame.Game
     {
         private readonly Minelayer minelayer;
         private readonly GameSettings settings;
+        private readonly PositionChecker positionChecker;
         private readonly Random random;
         private int moves;
         private int livesRemaining;
@@ -20,11 +21,12 @@ namespace MineGame.Game
         private IEnumerable<Location> mines;
         private bool gameOver;
 
-        public GameEngine(Random random, Minelayer minelayer, GameSettings settings)
+        public GameEngine(Random random, Minelayer minelayer, GameSettings settings,PositionChecker positionChecker)
         {
             this.random = random;
             this.minelayer = minelayer;
             this.settings = settings;
+            this.positionChecker = positionChecker;
         }
 
         public event EventHandler<OutputEventArgs> OutputEmmited;
@@ -52,7 +54,7 @@ namespace MineGame.Game
                     }
                     var newPosition = CalculateNewPosition(input);
                     //todo: check name of position
-                    if (!PositionChecker.IsLegal(settings.Dimensions, newPosition))
+                    if (!positionChecker.IsLegal(newPosition))
                     {
                         EmitOutput(Output.Invalid);
                         return;
